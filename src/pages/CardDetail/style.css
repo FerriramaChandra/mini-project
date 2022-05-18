@@ -1,0 +1,46 @@
+.container_detail {
+    margin: 30px auto;
+    border: 1px solid black;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.card_detail {
+    padding: 20px;
+    text-align: center;
+}
+
+.card_img_detail {
+    width: 100%;
+    height: 400px;
+}
+
+.card_content_detail {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spinner_contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 0;
+}
+
+.button_wrapper {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.button_back {
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.button_back a {
+    text-decoration: none;
+    color: white;
+}

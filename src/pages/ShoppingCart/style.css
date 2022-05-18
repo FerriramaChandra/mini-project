@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContainerTable {
+    display: flex;
+    justify-content: center;
+
+}
+
+.TableStyle {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.TableStyle thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+
+}
+
+.TableStyle th,
+.TableStyle td {
+    padding: 12px 15px;
+}
+
+.TableStyle tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.TableStyle tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.TableStyle tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.TableStyle tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.QuantityTable {
+    display: flex;
+    justify-content: center;
+}
+
+.ActionTable {
+    display: flex;
+    justify-content: center;
+}
+
+
+.HubungiPenjual {
+    padding: 5px;
+    background-color: #25D366;
+    border-radius: 5px;
+}
+
+.HubungiPenjual a {
+    text-decoration: none;
+    color: white;
+}

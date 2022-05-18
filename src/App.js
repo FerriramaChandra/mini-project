@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './wholePage/Home';
+import CardDetail from './pages/CardDetail/CardDetail';
+import AddProduct from './pages/AddProduct/AddProduct';
+import Login from './pages/Login&Regis/Login';
+import Register from './pages/Login&Regis/Register';
+import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+import PrivateRoute from './wholePage/PrivateRoute';
+import Navbar from './component/navbar/Navbar';
+import { Switch, Route } from 'react-router-dom';
+import Footer from './component/footer/Footer';
+import EditProduct from './pages/EditProduct/EditProduct';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/ProductDetail/:id' exact component={CardDetail} />
+        <Route path='/Login' exact component={Login} />
+        <Route path='/Register' exact component={Register} />
+        <Route path='/AddProduct' exact component={AddProduct} />
+        <PrivateRoute path='/ShoppingCart' exact component={ShoppingCart} />
+        <PrivateRoute path='/EditProduct/:id' exact component={EditProduct} />
+      </Switch>
+      <Footer />
+    </>
   );
 }
 

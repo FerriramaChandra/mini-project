@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Duar {
+    display: flex;
+    justify-content: space-between;
+}

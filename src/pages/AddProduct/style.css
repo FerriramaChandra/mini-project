@@ -1,0 +1,62 @@
+/* Add Product */
+
+.ContainerTambahProduk {
+    display: flex;
+    justify-content: center;
+}
+
+.Form {
+    width: 50%;
+    border: 1px solid black;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.PembungkusProduk {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.isiProduk {
+    row-gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.isiProduk div input {
+    width: 80%;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.isiProduk div input::placeholder {
+    font-size: 1rem;
+}
+
+.isiProduk div select {
+    font-size: 1.25rem;
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.isiProduk div textarea {
+    font-size: 1rem;
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 5rem;
+}
+
+.TombolSubmit {
+    margin: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4AB230;
+    color: white;
+}
+
+/* Add Product */

@@ -1,0 +1,30 @@
+/* Login */
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.form {
+    border: 1px solid black;
+    margin: 100px auto;
+    border-radius: 10px;
+    padding: 20px 40px;
+}
+
+.form h3 {
+    text-align: center;
+}
+
+.RegisButton a {
+    text-decoration: none;
+}
+
+.spinner_contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 0;
+}
+
+/* Login */
