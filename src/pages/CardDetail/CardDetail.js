@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
 const CardDetail = () => {
 
     const { id } = useParams();
-    const { data: dataDetailProduk, loading, error } = useQuery(GET_PRODUK_BY_PK, {
+    const { data: dataDetailProduk, loading, } = useQuery(GET_PRODUK_BY_PK, {
         variables: {
             id: id,
         }
     });
-    console.log(dataDetailProduk);
+    // console.log(dataDetailProduk);
 
     return (
         <div>
@@ -29,18 +29,18 @@ const CardDetail = () => {
                     :
                     <div className="container_detail">
                         <div className="card_detail">
-                            <img src={dataDetailProduk.PRODUK_by_pk.previewProduk} alt="Gambar preview produk" className="card_img_detail" />
+                            <img src={dataDetailProduk.PRODUK[0].previewProduk} alt="Gambar preview produk" className="card_img_detail" />
                             <div className="card_content_detail">
                                 <div className="title_wrapper">
-                                    <h5>{dataDetailProduk.PRODUK_by_pk.namaProduk}</h5>
-                                    <h6>Stok : {dataDetailProduk.PRODUK_by_pk.stok}</h6>
+                                    <h5>{dataDetailProduk.PRODUK[0].namaProduk}</h5>
+                                    <h6>Stok : {dataDetailProduk.PRODUK[0].stok}</h6>
                                 </div>
                                 <div>
-                                    <h6>Rp. {dataDetailProduk.PRODUK_by_pk.harga}</h6>
-                                    <h6>Kategory : {dataDetailProduk.PRODUK_by_pk.kategori}</h6>
+                                    <h6>Rp. {dataDetailProduk.PRODUK[0].harga}</h6>
+                                    <h6>Kategory : {dataDetailProduk.PRODUK[0].kategori}</h6>
                                 </div>
                             </div>
-                            <p>{dataDetailProduk.PRODUK_by_pk.deskripsi}</p>
+                            <p>{dataDetailProduk.PRODUK[0].deskripsi}</p>
                         </div>
                         <div className="button_wrapper">
                             <button className="button_back"><Link to="/">Kembali</Link></button>

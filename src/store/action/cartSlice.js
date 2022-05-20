@@ -42,7 +42,7 @@ const cartSlice = createSlice({
         plus: (state, action) => {
             const productIndex = state.cart.products.findIndex(product => product.id === action.payload.id)
             if (productIndex !== -1) {
-                if (state.cart.products[productIndex].quantity <= state.cart.products[productIndex].stock) {
+                if (state.cart.products[productIndex].quantity < state.cart.products[productIndex].stock) {
                     state.cart.products[productIndex].quantity++
                     state.cart.userId = action.payload.user_id
                 }

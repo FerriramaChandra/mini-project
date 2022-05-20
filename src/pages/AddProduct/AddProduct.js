@@ -1,5 +1,5 @@
 import { useMutation, } from "@apollo/client";
-import { INSERT_PRODUK, } from "../../query/queries";
+import { GET_PRODUK, INSERT_PRODUK, } from "../../query/queries";
 import { useState, useCallback, } from "react";
 import { useDropzone } from "react-dropzone";
 import { useHistory } from "react-router-dom";
@@ -36,7 +36,11 @@ const AddProduct = () => {
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-    const [insertProduk] = useMutation(INSERT_PRODUK);
+    const [insertProduk] = useMutation(INSERT_PRODUK, {
+        refetchQueries: [
+            { query: GET_PRODUK }
+        ]
+    });
     const HandleSubmit = (e) => {
         e.preventDefault();
         insertProduk({

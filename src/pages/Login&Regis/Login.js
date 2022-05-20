@@ -9,6 +9,7 @@ import { useHistory, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/action/userSlice";
 import { CircularProgress } from "@mui/material";
+import { Alert } from "@mui/material";
 
 const Login = () => {
 
@@ -24,11 +25,14 @@ const Login = () => {
             return history.push("/")
         }
     }, [data, history])
+
     const handleLogin = (e) => {
         e.preventDefault();
         getPengguna({ variables: { _eq: password, _eq1: username } }).then(res => {
             const user = res.data.PENGGUNA[0]
-            console.log(user);
+            // console.log(user);
+            localStorage.setItem("user", "login");
+            localStorage.setItem("username", username);
             dispatch(login({
                 username: user.username
             }));
@@ -36,6 +40,7 @@ const Login = () => {
             console.log(err)
         })
     }
+
     if (loading) {
         return (
             <div className="spinner_contain">

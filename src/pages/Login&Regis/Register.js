@@ -1,8 +1,11 @@
 import { INSERT_PENGGUNA } from "../../query/queries";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Register = () => {
+
+    const history = useHistory();
 
     const [insertPengguna, { data }] = useMutation(INSERT_PENGGUNA)
 
@@ -18,6 +21,7 @@ const Register = () => {
                 }
             }
         })
+        history.push("/Login")
         console.log({ userName, passWord })
         setUsername("");
         setPassword("");

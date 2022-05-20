@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import "./style.css"
@@ -7,7 +7,8 @@ import UserHeader from './UserHeader';
 import LoginHeader from './LoginHeader';
 import { GET_PRODUK_BY_KATEGORI } from '../../query/queries';
 import { useLazyQuery } from '@apollo/client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { login } from '../../store/action/userSlice';
 
 
 const Navbar = () => {
@@ -17,6 +18,19 @@ const Navbar = () => {
     const [getProdukByKategori, { data }] = useLazyQuery(GET_PRODUK_BY_KATEGORI)
     const [kategory, setKategory] = useState("");
     const isLogin = useSelector((state) => state.user.isLogin)
+    const status = localStorage.getItem("user")
+    // console.log(isLogin);
+    // console.log(status);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (status === "login") {
+            dispatch(login({
+                username: localStorage.getItem("username")
+            }))
+        }
+    }, []);
 
     const ClickHandler = (e) => {
         e.preventDefault();

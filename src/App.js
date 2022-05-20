@@ -12,6 +12,9 @@ import Footer from './component/footer/Footer';
 import EditProduct from './pages/EditProduct/EditProduct';
 
 const App = () => {
+
+
+
   return (
     <>
       <Navbar />

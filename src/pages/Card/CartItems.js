@@ -20,8 +20,7 @@ const CartItems = () => {
     const username = useSelector((state) => state.user.username)
     const history = useHistory();
     const { data, loading, } = useQuery(GET_PRODUK);
-    const cart = useSelector((state) => state.cart)
-    console.log(data);
+    // const cart = useSelector((state) => state.cart)
 
     const [deleteProduk, { loading: loadingDelete, error: errorDelete }] = useMutation(DELETE_PRODUK, {
         refetchQueries: [

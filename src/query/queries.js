@@ -16,7 +16,7 @@ export const GET_PRODUK = gql`
 
 export const GET_PRODUK_BY_PK = gql`
     query MyQuery($id: Int!) {
-        PRODUK_by_pk(id: $id) {
+        PRODUK(where: {id: {_eq: $id}}) {
             deskripsi
             harga
             id
@@ -103,7 +103,7 @@ export const DELETE_PRODUK = gql`
 `
 
 export const UPDATE_PRODUK_BY_PK = gql`
-    mutation MyMutation($id: Int!, $harga: Int!, $deskripsi: String!, $stok: Int!, $previewProduk: String = "", $namaProduk: String!, $kategori: String!) {
+    mutation MyMutation($id: Int!, $harga: Int!, $deskripsi: String!, $stok: Int!, $previewProduk: String!, $namaProduk: String!, $kategori: String!) {
         update_PRODUK_by_pk(pk_columns: {id: $id}, _set: {deskripsi: $deskripsi, harga: $harga, kategori: $kategori, namaProduk: $namaProduk, previewProduk: $previewProduk, stok: $stok}) {
             deskripsi
             harga
